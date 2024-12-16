@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" placeholder="Enter Value" id="number" />
+      <button type="button" id="btn">Trash</button> <br />
+      <span id="result"></span>
+    </form>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        const num = Number(document.getElementById("number").value);
+        let n = 0;
+
+        if (num >= 1 && num <= 50) {
+          n = num * 500;
+        } else if (num >= 51 && num <= 100) {
+          n = num * 1000;
+        } else if (num >= 101 && num <= 150) {
+          n = num * 1500;
+        } else if (num >= 151 && num <= 200) {
+          n = num * 2000;
+        } else if (num > 200) {
+          n = num * 25000;
+        }
+        document.getElementById("result").innerText = `${num} kW = ${n} R`;
+      });
+    </script>
+  </body>
+</html>
